@@ -4,6 +4,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: white;
 }
 
 .grid {
@@ -12,7 +13,7 @@ body {
   display: grid;
   grid-template-columns: repeat(7, 6rem);
   gap: 1rem;
-  list-style-type: none;
+  list-style-type: square;
   border-radius: 0.5rem;
 }
 
