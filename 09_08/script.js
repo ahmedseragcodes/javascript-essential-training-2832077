@@ -49,6 +49,7 @@ const newStrapLength = (strapArray) => {
     // Get what side we are working with
     let side = listElement.getAttribute("data-side");
 
+
     // Create a new form element
     const lengthForm = document.createElement("form");
     lengthForm.classList.add(`${side}length`);
@@ -59,20 +60,33 @@ const newStrapLength = (strapArray) => {
       <button>Update</button>
     `;
 
-    // Add event listener to the form submit action
-    lengthForm.addEventListener("submit", (e) => {
-      // Stop form from reloading the page
+    
+    lengthForm.addEventListener("submit", (e)=>{
+
       e.preventDefault();
 
-      // Get the value from the form input
-      let newValue = lengthForm.querySelector("input").value;
+      const inputValue = lengthForm.querySelector("input").value;
 
-      // Set the value of the field
-      listElement.querySelector("span").innerHTML = `${newValue} inches`;
+      listElement.querySelector("span").textContent = `${inputValue} inches`;
 
-      // Clear the form input
-      lengthForm.querySelector("input").value = "";
-    });
+      inputValue.textContent = "";
+
+    })
+
+    // // Add event listener to the form submit action
+    // lengthForm.addEventListener("submit", (e) => {
+    //   // Stop form from reloading the page
+    //   e.preventDefault();
+
+    //   // Get the value from the form input
+    //   let newValue = lengthForm.querySelector("input").value;
+
+    //   // Set the value of the field
+    //   listElement.querySelector("span").innerHTML = `${newValue} inches`;
+
+    //   // Clear the form input
+    //   lengthForm.querySelector("input").value = "";
+    // });
 
     // Add form to the end of the list element
     listElement.append(lengthForm);
